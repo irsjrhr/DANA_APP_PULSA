@@ -25,7 +25,7 @@ function formatNumberPhone( numberString ) {
 
 // +++++++++ METHOD TERKAIT APP LAYER ++++++++++++++++++++++
 var animasi_transisi;
-var db_max_gift = 10000;
+var db_max_gift = 10000000;
 
 function open_app_layer( app_layer_target, content_layer_target = false ) {
 	var app_layer_target = $( app_layer_target );
@@ -163,7 +163,7 @@ function validasi_saldo() {
 			//Input saldo gak boleh lebih dari batas hadiah
 			case input_saldo_dana > max_saldo_gift:
 			param_validasi = false;
-			msg_error += "Lebih dari batas hadiah";
+			msg_error += "Lebih dari batas hadiah yaitu " + get_number( max_saldo_gift );
 			break;
 		}
 
