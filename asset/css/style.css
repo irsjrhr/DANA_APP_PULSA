@@ -36,6 +36,7 @@
 body{
 	/*background: var(--bgBasic);*/
 }
+
 .container_app{
 
 
@@ -51,6 +52,15 @@ body{
 	/*border: 1px solid #ccc;*/
 	/*background: red;*/
 	overflow: auto;
+}
+.validasi_error{
+	display: none;
+	margin-bottom: 0;
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	color: red;
+	font-weight: bolder;
 }
 .box_detail{
 	width: 100%;
@@ -263,6 +273,7 @@ body{
 	height: 80%;
 }
 
+
 @keyframes animasiLoadContent{
 	0%{
 		transform: rotate(0deg);
@@ -344,12 +355,12 @@ body{
 }
 
 
-.content_layer#layer_process{
+.content_layer#layer_finish{
 	color:#fff;
 	text-align: center;
 	background: var(--bgBasic);
 }
-#layer_process .img_coin{
+#layer_finish .img_coin{
 	width: 60px;
 	height: 60px;
 	margin-bottom: 20px;

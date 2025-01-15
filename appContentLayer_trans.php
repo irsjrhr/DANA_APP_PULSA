@@ -10,7 +10,7 @@
 			</div>
 			<div class="col">
 				<h4> Send Money </h4>
-				<p> Nama Customer </p>
+				<p class="user_dana"> User Dana </p>
 			</div>
 		</div>
 	</div>
@@ -20,15 +20,15 @@
 				<h4>Total Price</h4> 
 			</div>
 			<div class="col value"> 
-				<h3 class="text-warning"> Rp100.000 </h3>
+				<h3 class="text-warning"> Rp<span class="saldo_dana">0</span> </h3>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col title">
-				<p>Total Price</p>  
+				<p>Subtotal</p>  
 			</div>
 			<div class="col value"> 
-				<p> Rp100.000 </p>
+				<p> Rp <span class="saldo_dana"> </span> </p>
 			</div>
 		</div>
 		<div class="row">
@@ -44,23 +44,23 @@
 	</div>
 	<div class="box_submit">
 		<button class="btn btn-default btn_submit">  
-			PAY <span> Rp10.000 </span>
+			PAY Rp<span class="saldo_dana">0</span>
 		</button>
 	</div>
 </div>
 <!-- End Of Content layer -  #Layer Confirm -->
 
-<!-- Content layer - #Layer Process -->
-<div class="content_layer pt-2" id="layer_process">
+<!-- Content layer - #Layer finish -->
+<div class="content_layer pt-2" id="layer_finish">
 	<p> Payment Success </p>
 	<img src="asset/gam/coin.png" class="img_coin">
 	<h2> Send Money to </h2>
-	<h5> NAMA PENGGUNA  </h5>
-	<h3> Rp100.000 </h3>
+	<h5 class="user_dana"> NAMA PENGGUNA  </h5>
+	<h3> Rp<span class="saldo_dana">0</span> </h3>
 	<div class="box_submit">
-		<button class="btn btn-default btn_submit">  
-			CHECK DETAILS
-		</button>
+		<a href="" class="btn btn-default btn_submit">  
+			CONFIRM
+		</a>
 	</div>
 </div>
-<!-- End Of Content #Layer Process -->
+<!-- End Of Content #Layer finish -->
