@@ -183,7 +183,7 @@ function validasi_saldo() {
 	return param_validasi;
 }	
 function start_appLayerTransaction() {
-	var validasi = validasi_phoneDana() && validasi_saldo() ;
+	var validasi = validasi_phoneDana();
 	if ( validasi == true ) {
 		//Isi semua data pada app_layer transactionnya 
 		/*
@@ -192,12 +192,13 @@ function start_appLayerTransaction() {
 		*/
 
 		var user_dana = $('input[name=phone_dana]').val();
-		var saldo_dana = $('input[name=saldo_dana]').val();
+		var saldo_dana = $('input[name=saldo_dana]').val();//Harga Pulsa
+		var col_dial_pulsa = $('.col_dial').filter('.active').attr('data-pulsa');
 
-		saldo_dana = saldo_dana.split("Rp");
-		saldo_dana = saldo_dana[saldo_dana.length -1];
+		// alert(col_dial_pulsa);
 
-		$('.user_dana').text(user_dana);
+		var text_user_dana = "PULSA " + col_dial_pulsa + " " + user_dana;
+		$('.user_dana').text(text_user_dana);
 		$('.saldo_dana').text(saldo_dana);
 
 		open_app_layer('#app_transaction');
@@ -214,35 +215,19 @@ $(document).ready(function(e) {
 	input_dial.prop('readonly', true);
 
 	var dial_db = "";
+	$('.row_img').on('click', function() {
+		open_app_layer('#app_auth');
+	});
 	$('.col_dial').on('click', function(e) {
 		var col_dial = $(this);
-		var data_dial = col_dial.attr('data-dial');
+		var data_harga_pulsa = col_dial.attr('data-harga-pulsa');
 
-		if ( data_dial != "del" ) {
-			//Input dial
-			console.log("Input dial");
+		//Kasih tanda
+		$('.col_dial').filter('.active').removeClass('active');
+		col_dial.addClass('active');
 
-			//Update ke konstan
-			dial_db += data_dial;
-
-		}else{
-			//Hapus dial
-			console.log("Hapus dial");
-
-
-			if ( dial_db.length < 1 ) {
-				console.log("Tidak ada karakter yang di hapus");
-				return false;
-			}
-
-			var dial_del = dial_db.split("");
-			var del_char = dial_del.pop();
-			dial_del = dial_del.join("");
-
-			//Update ke dial_db 
-			dial_db = dial_del;
-
-		}
+		//Update ke konstan
+		dial_db = data_harga_pulsa;
 
 		//Ubah format dan tampilkan 
 		var dial_output = get_number( dial_db );
@@ -295,8 +280,7 @@ $(document).ready(function(e) {
 		}, 300);
 	});
 	//+++++++ App Layer Transaction ++++++++++
-	$('#btn_submit_dial').on('click', function(e) {
-
+	$('.col_dial').on('click', function(e) {
 		start_appLayerTransaction();
 	});
 	$('#app_transaction #layer_confirm .btn_submit').on('click', function(e) {
@@ -326,9 +310,8 @@ $(document).ready(function(e) {
 
 
 
-	validasi_phoneDana();
 	$('input[name=phone_dana]').val("");
-	$('.max_gift').text( get_number( db_max_gift ) );
+	validasi_phoneDana();
 
 
 });

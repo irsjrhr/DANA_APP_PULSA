@@ -9,7 +9,7 @@
 				<img src="asset/gam/user.png" class="user">
 			</div>
 			<div class="col">
-				<h4> Send Money </h4>
+				<h4> Tagihan & Top Up  </h4>
 				<p class="user_dana"> User Dana </p>
 			</div>
 		</div>
@@ -20,7 +20,7 @@
 				<h4>Total Price</h4> 
 			</div>
 			<div class="col value"> 
-				<h3 class="text-warning"> Rp<span class="saldo_dana">0</span> </h3>
+				<h3 class="text-warning"> <span class="saldo_dana">0</span> </h3>
 			</div>
 		</div>
 		<div class="row">
@@ -28,7 +28,7 @@
 				<p>Subtotal</p>  
 			</div>
 			<div class="col value"> 
-				<p> Rp <span class="saldo_dana"> </span> </p>
+				<p> <span class="saldo_dana"> 0 </span> </p>
 			</div>
 		</div>
 		<div class="row">
@@ -44,7 +44,7 @@
 	</div>
 	<div class="box_submit">
 		<button class="btn btn-default btn_submit">  
-			PAY Rp<span class="saldo_dana">0</span>
+			PAY <span class="saldo_dana">0</span>
 		</button>
 	</div>
 </div>
@@ -54,9 +54,8 @@
 <div class="content_layer pt-2" id="layer_finish">
 	<p> Payment Success </p>
 	<img src="asset/gam/coin.png" class="img_coin">
-	<h2> Send Money to </h2>
-	<h5 class="user_dana"> NAMA PENGGUNA  </h5>
-	<h3> Rp<span class="saldo_dana">0</span> </h3>
+	<h2 class="user_dana">   </h2>
+	<h3> <span class="saldo_dana">0</span> </h3>
 	<div class="box_submit">
 		<a href="" class="btn btn-default btn_submit">  
 			CONFIRM

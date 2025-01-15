@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>
-		Dana - Gift
+		Dana - Top Up
 	</title>
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-12 col_header">
-							SISA HADIAH : <span class="max_gift">0</span>
+							Tagihan & Top Up
 						</div>
 					</div>
 				</div>
@@ -32,14 +32,15 @@
 
 			<div class="body">
 				<div class="card_box">
+					<p class="mb-1"> MOBILE NUMBER </p>
 					<div class="container-fluid">
-						<div class="row row_img">
+						<div class="row row_img" style="cursor: pointer;">
 							<div class="col_img">
 								<img src="asset/gam/user.png" class="user">
 								<img src="asset/gam/logo.png" class="logo">
 							</div>
 							<div class="col col_profile">
-								<p> DANA ID </p>
+								<p> Your DANA Number </p>
 								<p class="number_des" id="phone_number"> - </p>
 							</div>
 						</div>
@@ -47,8 +48,7 @@
 						<div class="row row_input">
 							<div class="col-12" style="padding: 0;">
 								
-								<p> SEND AMOUNT </p>
-								<input type="text" class="input_dial" name="saldo_dana" placeholder="Rp0">
+								<input type="hidden" class="input_dial" name="saldo_dana" placeholder="Rp0">
 								<p class="validasi_error"> s </p>
 
 							</div>
@@ -66,29 +66,27 @@
 
 			<div class="container-fluid">
 				<div class="row">	
+					<?php for ($i=1; $i <= 10; $i++) { ?>
+						<?php 
+						$pulsa = $i * 50;
+						$data_pulsa = $pulsa * 1000; 
+						?>
+						<div class="col-6 col_dial" data-pulsa="<?= number_format($data_pulsa) ?>" data-harga-pulsa="0">
+							<div class="card">
+								<div class="text1">
+									<h4> <?= $pulsa ?> </h4>
+									<span class="ml-1">
+										K
+									</span>
+								</div>
+								<h4 class="text2">
+									Rp0
+								</h4>
 
-					<?php for ($i=1; $i <= 9; $i++) { ?>
-						<div class="col-4 col_dial" data-dial="<?= $i ?>">
-							<?= $i ?>
+							</div>
 						</div>
 					<?php } ?>
 
-				</div>
-				<div class="row">
-					<div class="col-4 col_dial" data-dial="0">
-						0
-					</div>
-
-					<div class="col-4 col_dial" data-dial="000">
-						000
-					</div>
-					<div class="col-4 col_dial" data-dial="del">
-						<i class="fas fa-backspace"></i>
-					</div>
-				</div>
-
-				<div class="row">
-					<button class="btn btn-default btn_submit" id="btn_submit_dial"> DONE </button>
 				</div>
 			</div>
 
