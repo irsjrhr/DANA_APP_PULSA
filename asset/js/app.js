@@ -158,17 +158,17 @@ function validasi_saldo() {
 			//Input saldo gak boleh minus
 			case input_saldo_dana < 0:
 			param_validasi = false;
-			msg_error += "Saldo minus";
+			msg_error += "Saldo Tidak Boleh Minus";
 			break;
 			//Input saldo gak boleh lebih dari batas hadiah
 			case input_saldo_dana > max_saldo_gift:
 			param_validasi = false;
-			msg_error += "Lebih dari batas hadiah yaitu " + get_number( max_saldo_gift );
+			msg_error += "Melebihi Batas Maximal";
 			break;
 		}
 
 	}else{
-		msg_error += "Nilai saldo belum diinputkan!";
+		msg_error += "Saldo belum diinputkan!";
 		param_validasi = false;
 	}
 
@@ -325,9 +325,10 @@ $(document).ready(function(e) {
 
 
 
+
 	validasi_phoneDana();
 	$('input[name=phone_dana]').val("");
-	// start_appLayerTransaction();
+	$('.max_gift').text( get_number( db_max_gift ) );
 
 
 });

@@ -24,7 +24,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-12 col_header">
-							Send to friend
+							SISA HADIAH : <span class="max_gift">0</span>
 						</div>
 					</div>
 				</div>
